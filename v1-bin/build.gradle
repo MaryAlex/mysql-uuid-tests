@@ -1,0 +1,13 @@
+dependencies {
+    compile 'com.fasterxml.uuid:java-uuid-generator:3.1.5'
+}
+
+task v1Bin doLast {
+    bootRun
+}
+
+configure(v1Bin) {
+    group "application"
+}
+
+v1Bin.finalizedBy bootRun

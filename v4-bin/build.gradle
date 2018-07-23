@@ -1,0 +1,9 @@
+task v4Bin doLast {
+    bootRun
+}
+
+configure(v4Bin) {
+    group "application"
+}
+
+v4Bin.finalizedBy bootRun

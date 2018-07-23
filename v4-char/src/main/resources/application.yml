@@ -1,0 +1,10 @@
+server:
+  port: 12100
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create
+  datasource:
+    url: jdbc:mysql://localhost:3306/v4-char
+    username: root
+    password: mapu4825

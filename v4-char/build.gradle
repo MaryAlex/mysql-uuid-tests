@@ -1,0 +1,9 @@
+task v4Char doLast {
+    bootRun
+}
+
+configure(v4Char) {
+    group "application"
+}
+
+v4Char.finalizedBy bootRun
