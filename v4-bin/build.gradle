@@ -1,3 +1,7 @@
+dependencies {
+    compile project(':common')
+}
+
 task v4Bin doLast {
     bootRun
 }

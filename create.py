@@ -1,20 +1,10 @@
-import requests
-import datetime
+import datetime as datetime
+import requests as requests
 
-# UUID first version as varbinary
-before_v1_bin = datetime.datetime.now()
-requests.get("http://localhost:12102/create")
-delta_v1_bin = datetime.datetime.now() - before_v1_bin
-print(delta_v1_bin.microseconds)
+CREATE_URL = "/create"
 
-# UUID forth version as varbinary
-before_v4_bin = datetime.datetime.now()
-requests.get("http://localhost:12101/create")
-delta_v4_bin = datetime.datetime.now() - before_v4_bin
-print(delta_v4_bin.microseconds)
-
-# UUID forth version as varchar
-before_v4_char = datetime.datetime.now()
-requests.get("http://localhost:12100/create")
-delta_v4_char = datetime.datetime.now() - before_v4_char
-print(delta_v4_char.microseconds)
+for i in range(3):
+    before = datetime.datetime.now()
+    requests.get("http://localhost:1210" + str(i) + CREATE_URL)
+    delta = datetime.datetime.now() - before
+    print('Creating ', i, ':', delta.microseconds)

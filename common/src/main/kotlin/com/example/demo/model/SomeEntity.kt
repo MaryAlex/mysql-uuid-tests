@@ -10,11 +10,10 @@ import javax.persistence.Table
 
 @Entity
 @Table(indexes = [Index(name = "IDX_MYIDX", columnList = "uuid")])
-class SomeEntity(
+open class SomeEntity(
         @Id
-        @GeneratedValue(strategy = GenerationType.AUTO)
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
         var id: Long? = null,
-
 
         var uuid: String = UUID.randomUUID().toString()
 )
