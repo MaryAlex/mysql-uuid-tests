@@ -10,4 +10,4 @@ for i in range(3):
     before = datetime.datetime.now()
     requests.get("http://localhost:1210" + str(i) + SELECT_URL, params=uuid)
     delta = datetime.datetime.now() - before
-    print('Selection ', i, ':', delta.microseconds)
+    print('Selection ', i, ':', delta, '(with uuid: ', uuid_response.text, ')')
