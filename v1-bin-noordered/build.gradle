@@ -4,12 +4,12 @@ dependencies {
 
 }
 
-task v1Bin doLast {
+task v1BinNoOrdered doLast {
     bootRun
 }
 
-configure(v1Bin) {
+configure(v1BinNoOrdered) {
     group "application"
 }
 
-v1Bin.finalizedBy bootRun
+v1BinNoOrdered.finalizedBy bootRun

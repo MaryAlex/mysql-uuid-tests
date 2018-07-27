@@ -1,4 +1,5 @@
 include 'v4-char',
         'v4-bin',
+        'v1-bin-noordered',
         'v1-bin',
         'common'

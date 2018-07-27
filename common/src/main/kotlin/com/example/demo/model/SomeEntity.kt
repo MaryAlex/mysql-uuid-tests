@@ -1,19 +1,15 @@
 package com.example.demo.model
 
-import java.util.UUID
-import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
 import javax.persistence.Id
-import javax.persistence.Index
-import javax.persistence.Table
+import javax.persistence.MappedSuperclass
 
-@Entity
-@Table(indexes = [Index(name = "IDX_MYIDX", columnList = "uuid")])
+@MappedSuperclass
 open class SomeEntity(
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         var id: Long? = null,
 
-        var uuid: String = UUID.randomUUID().toString()
+        var smth: String = "smth"
 )
