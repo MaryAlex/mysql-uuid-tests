@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 class MainController(@Autowired val v4CharRepository: V4CharRepository) : BaseController<V4CharEntity, String>(v4CharRepository) {
-    override fun save() = v4CharRepository.saveCustom(getNew())
     override lateinit var currentUUID: String
     override fun repoSelect() = v4CharRepository.findByUuid(currentUUID)
     override fun getUuid() {

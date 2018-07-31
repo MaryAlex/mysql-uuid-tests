@@ -8,7 +8,6 @@ import java.util.UUID
 
 @RestController
 class MainController(@Autowired val v4BinRepository: V4BinRepository) : BaseController<V4BinEntity, UUID>(v4BinRepository) {
-    override fun save() = v4BinRepository.saveCustom(getNew())
     override lateinit var currentUUID: UUID
 
     override fun repoSelect(): V4BinEntity? {

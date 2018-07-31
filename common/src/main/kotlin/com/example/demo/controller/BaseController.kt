@@ -34,10 +34,10 @@ abstract class BaseController<T : SomeEntity, F>(private val someRepository: Bas
 
     protected abstract fun getNew(): T
     protected abstract fun repoSelect(): T?
-    abstract fun save()
+    fun save() = this.someRepository.save(getNew())
     open fun getObjectFromMiddle() = someRepository.findById(N / 2).get()
 
     companion object {
-        const val N = 20000000L
+        const val N = 20000L
     }
 }
